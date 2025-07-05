@@ -1,0 +1,35 @@
+[mgr]
+show_hidden = false
+sort_sensitively = false
+sort_reverse = false
+sort_dirs_first = true
+sort_translit = true
+[opener]
+edit = [{ run = 'nvim "$@"', block = true }]
+edit_image = [{ run = 'gimp "$@"', block = false, orphen = true }]
+open_image = [{ run = 'feh --auto-zoom --scale-down "$@"', block = false }]
+open_html = [
+  { run = 'google-chrome-stable "$@"', block = false, orphen = true },
+]
+open_vedio = [{ run = 'vlc "$@"', block = false, orphen = true }]
+[open]
+prepend_rules = [
+  { mime = "image/*", use = [
+    "open_image",
+    "edit_image",
+  ] },
+  { name = "*.html", use = [
+    "open_html",
+  ] },
+  { mime = "video/*", use = "open_vedio" },
+]
+[plugin]
+
+prepend_previewers = [
+  { name = "*.csv", run = "rich-preview" },   # for csv files
+  { name = "*.md", run = "rich-preview" },    # for markdown (.md) files
+  { name = "*.rst", run = "rich-preview" },   # for restructured text (.rst) files
+  { name = "*.ipynb", run = "rich-preview" }, # for jupyter notebooks (.ipynb)
+  { name = "*.json", run = "rich-preview" },  # for json (.json) files
+  #    { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
+]

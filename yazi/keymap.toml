@@ -1,0 +1,13 @@
+[mgr]
+prepend_keymap = [
+  { on = "e", run = "open edit", desc = "Edit file with GIMP or nvim" },
+  { on = "<Enter>", run = "open", desc = "Open file with feh or xdg-open" },
+  { on = ["g","p"], run = "cd ~/CodeProject", desc = "open codeProject folder"},
+
+  { on = ["g","i"], run = "cd ~/image/", desc = "open image folder"},
+  { on = ["g","n"], run = "cd ~/.config/nvim/", desc = "open nvim_config folder"},
+  { on = ["g","v"], run = "cd ~/Videos", desc = "open video folder"},
+  { on = ["g","."], run = "cd ~/dotfiles/", desc = "open dotfiles folder"},
+  { on = ["g","D"], run = "cd ~/Desktop/", desc = "open Desktop folder"},
+  { on = ["L","H"], run = "hardlink ", desc = "toggle hard link"},
+]

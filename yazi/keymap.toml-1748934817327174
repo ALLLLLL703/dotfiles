@@ -1,0 +1,5 @@
+[manager]
+prepend_keymap = [
+    { on = "i", run = "open edit", desc = "Edit file with GIMP or nvim" },
+    { on = "<Enter>", run = "open", desc = "Open file with feh or xdg-open" }
+]
